@@ -14,69 +14,88 @@
     position: fixed;
     right: 0;
     text-align: center;
-}
+  }
+
   #bottom-bar1 {
     bottom: 0;
     left: 0;
     position: fixed;
     right: 0;
     text-align: center;
-}
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
-.w3-sidebar {
-  z-index: 3;
-  width: 250px;
-  top: 43px;
-  bottom: 0;
-  height: inherit;
-}
+  }
+
+  html,
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Roboto", sans-serif;
+  }
+
+  .w3-sidebar {
+    z-index: 3;
+    width: 250px;
+    top: 43px;
+    bottom: 0;
+    height: inherit;
+  }
 </style>
 <body>
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-teal">Information About Me</h1>
-      <p>Some information about me: My name is Christopher Mooney, I am 17 years old and I am from Philledelphia. Before attending York Tech, I went to school at Central York School District. I decided that I had better career options if I followed over to York Tech and I love working with technology and programming, so it was the logical choice for me.</p>
+      <p id="chris1">Some information about me: My name is Christopher Mooney, I am 17 years old and I am from Philledelphia. Before attending York Tech, I went to school at Central York School District. I decided that I had better career options if I followed
+        over to York Tech and I love working with technology and programming, so it was the logical choice for me.</p>
       <br>
-      <p>I have always liked using and building pc's, so when I got the opprutunity to do all of that, I took the chance as soon as I can so I was able to follow what I liked doing, and not getting stuck doing something that I hate.</p>
+      <p id="chris2">I have always liked using and building pc's, so when I got the opprutunity to do all of that, I took the chance as soon as I can so I was able to follow what I liked doing, and not getting stuck doing something that I hate.</p>
     </div>
   </div>
 
-    <div class="w3-container w3-theme-l1" id="bottom-bar">
-      <p>Powered by Life of Team F</p>
-    </div>
+  <div class="w3-container w3-theme-l1" id="bottom-bar">
+    <p>Powered by Life of Team F</p>
+  </div>
 
 
-<!-- END MAIN -->
+  <!-- END MAIN -->
 
 
-<script>
-// Get the Sidebar
-var mySidebar = document.getElementById("mySidebar");
-
-// Get the DIV with overlay effect
-var overlayBg = document.getElementById("myOverlay");
-
-// Toggle between showing and hiding the sidebar, and add overlay effect
-function w3_open() {
-  if (mySidebar.style.display === 'block') {
-    mySidebar.style.display = 'none';
-    overlayBg.style.display = "none";
-  } else {
-    mySidebar.style.display = 'block';
-    overlayBg.style.display = "block";
+  <script>
+  var chris = {
+    line1: document.getElementById("chris1").innerHTML,
+    line2: document.getElementById("chris2").innerHTML
   }
-}
 
-// Close the sidebar with the close button
-function w3_close() {
-  mySidebar.style.display = "none";
-  overlayBg.style.display = "none";
-}
-</script>
+  chris = JSON.stringify(chris)
+  console.log(chris)
+
+    // Get the DIV with overlay effect
+    var overlayBg = document.getElementById("myOverlay");
+
+    // Toggle between showing and hiding the sidebar, and add overlay effect
+    function w3_open() {
+      if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+      } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+      }
+    }
+
+    // Close the sidebar with the close button
+    function w3_close() {
+      mySidebar.style.display = "none";
+      overlayBg.style.display = "none";
+    }
+  </script>
 
 </body>
+
 </html>

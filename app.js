@@ -5,7 +5,7 @@ const path = require('path');
 const ejs = require('ejs')
 
 app.set('views', path.join(__dirname, 'views'))
-  app.set('view engine', 'ejs')
+app.set('view engine', 'ejs')
 
 // sendFile will go here
 app.get('/hi', function(req, res) {
@@ -28,18 +28,19 @@ app.get("/jayson", (req, res) => {
     title: 'hello',
     mainbody: 'no'
   });
-  app.get("/tyler", (req, res) => {
-    res.render('tyler', {
-      title: 'hello',
-      mainbody: 'no'
-    });
+});
+app.get("/tyler", (req, res) => {
+  res.render('tyler', {
+    title: 'hello',
+    mainbody: 'no'
   });
-  app.get("/will", (req, res) => {
-    res.render('will', {
-      title: 'hello',
-      mainbody: 'no'
-    });
-  })
+});
+app.get("/will", (req, res) => {
+  res.render('will', {
+    title: 'hello',
+    mainbody: 'no'
+  });
+});
 
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
