@@ -1,0 +1,22 @@
+{
+  "will":{
+    "name":"Will",
+    "title": "hello",
+    "mainbody": "  <p id=\"will1\">My name is Will and I was born in 2004 Before attending York Tech I went to Redlion I went to YorkTech for programming.<p id=\"will2\">Some of my hobbies are gaming and hunting.<p id=\"will3\"> I work at Subway and Ive been working there for over 6 months."
+  },
+  "chris":{
+    "name":"Chris",
+    "title": "hello",
+    "mainbody": "<p id=\"chris1\">Some information about me: My name is Christopher Mooney, I am 17 years old and I am from Philledelphia. Before attending York Tech, I went to school at Central York School District. I decided that I had better career options if I followed over to York Tech and I love working with technology and programming, so it was the logical choice for me. I have always liked using and building pc's, so when I got the opprutunity to do all of that, I took the chance as soon as I can so I was able to follow what I liked doing, and not getting stuck doing something that I hate.</p>"
+  },
+  "jayson":{
+    "name":"Jayson",
+    "title": "hello",
+    "mainbody": "<p id=jayson1>My name is Jayson Zeigler and I am go to York County School of Technology for Programming. My home school is Dallastown Area High School. I am 16 years old and I live on the edge of York City. I have a 2003 Nissan Sentra, and I just got my permit. </p>"
+  },
+  "tyler":{
+    "name":"Tyler",
+    "title": "hello",
+    "mainbody":  "<p id=\"tyler1\">some info about me: Before i went to York Tech i went to Northeastern School ditrict. My favorite color is a blue/green color similar to teal and mint, but my second favorite is dark purple (midnight purple) In my free time i like to work on cars and other fun projects</p>"
+  }
+}
