@@ -12,6 +12,8 @@ var rawdata = fs.readFileSync('profiles.JSON');
 var profileData = JSON.parse(rawdata);
 console.log(rawdata);
 console.log(profileData);
+
+
 // sendFile will go here
 app.get('/hi', function(req, res) {
   res.sendFile(path.join(__dirname, '/main.html'));
@@ -34,6 +36,26 @@ app.get("/tyler", (req, res) => {
 app.get("/will", (req, res) => {
   res.render('profile', profileData.will);
 });
+app.get("/feedback", (req, res) => {
+  rawdata = fs.readFileSync('comments.json');
+  commentData = JSON.parse(rawdata);
+  let feedback = {
+    name: req.query.name,
+    adjective: req.query.adjective
+  };
+  if (feedback.name && feedback.adjective) {
+    commentData.comments.push(feedback)
+    fs.writeFile("comments.json", JSON.stringify(commentData), "utf8", (err) => {
+      if (err) {
+        console.log(err)
+      } else {
+        res.send("Success")
+      }
+    })
+  } else {
+    res.send("Missing Parameters")
+  }
+})
 
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
