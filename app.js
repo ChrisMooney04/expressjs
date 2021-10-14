@@ -4,14 +4,15 @@ const app = express();
 const path = require('path');
 const ejs = require('ejs')
 const fs = require('fs');
+app.use(express.urlencoded());
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
 var rawdata = fs.readFileSync('profiles.JSON');
 var profileData = JSON.parse(rawdata);
-console.log(rawdata);
-console.log(profileData);
+/*console.log(rawdata);
+console.log(profileData);*/
 
 
 // sendFile will go here
@@ -25,24 +26,21 @@ app.get("/", (req, res) => {
   });
 });
 app.get("/chris", (req, res) => {
-    res.render('profile', profileData.chris);
+  res.render('profile', profileData.chris);
 });
 app.get("/jayson", (req, res) => {
-    res.render('profile', profileData.jayson);
+  res.render('profile', profileData.jayson);
 });
 app.get("/tyler", (req, res) => {
-    res.render('profile', profileData.tyler);
+  res.render('profile', profileData.tyler);
 });
 app.get("/will", (req, res) => {
   res.render('profile', profileData.will);
 });
 app.get("/feedback", (req, res) => {
-  rawdata = fs.readFileSync('comments.json');
+  res.sendFile(path.join(__dirname + '/feedback.html'))
+  /*rawdata = fs.readFileSync('comments.json');
   commentData = JSON.parse(rawdata);
-  let feedback = {
-    name: req.query.name,
-    adjective: req.query.adjective
-  };
   if (feedback.name && feedback.adjective) {
     commentData.comments.push(feedback)
     fs.writeFile("comments.json", JSON.stringify(commentData), "utf8", (err) => {
@@ -52,8 +50,24 @@ app.get("/feedback", (req, res) => {
         res.send("Success")
       }
     })
-  } else {
-    res.send("Missing Parameters")
+  }*/
+});
+app.post('/feedback', (req, res) => {
+  let feedback = {
+    name: req.body.name,
+    adjective: req.body.comments
+  };
+  rawdata = fs.readFileSync('comments.json');
+  commentData = JSON.parse(rawdata);
+  commentData.comments.push(feedback)
+  if (feedback.name && feedback.adjective) {
+    fs.writeFile("comments.json", JSON.stringify(commentData), "utf8", (err) => {
+      if (err) {
+        console.log(err)
+      } else {
+        res.send("Success")
+      }
+    })
   }
 })
 
