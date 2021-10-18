@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Comments</title>
+  </head>
+  <body>
+    <center>
+      <h1>Feedback Page</h1>
+      <div id='jeff'>
+        <%-comments-%>
+      </div>
+    </center>
+  </body>
+  <script type="text/javascript">
+    var comments = JSON.stringify(commentData)
+    console.log(comments)
+  </script>
+</html>

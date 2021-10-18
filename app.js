@@ -39,18 +39,6 @@ app.get("/will", (req, res) => {
 });
 app.get("/feedback", (req, res) => {
   res.sendFile(path.join(__dirname + '/feedback.html'))
-  /*rawdata = fs.readFileSync('comments.json');
-  commentData = JSON.parse(rawdata);
-  if (feedback.name && feedback.adjective) {
-    commentData.comments.push(feedback)
-    fs.writeFile("comments.json", JSON.stringify(commentData), "utf8", (err) => {
-      if (err) {
-        console.log(err)
-      } else {
-        res.send("Success")
-      }
-    })
-  }*/
 });
 app.post('/feedback', (req, res) => {
   let feedback = {
@@ -65,11 +53,16 @@ app.post('/feedback', (req, res) => {
       if (err) {
         console.log(err)
       } else {
-        res.send("Success")
+
       }
     })
   }
 })
 
+app.get("/comments", (req, res) => {
+  data = fs.readFileSync('comments.JSON')
+  commentData = JSON.parse(data)
+  res.render(path.join(__dirname, 'views/comments.ejs'), commentData);
+})
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
