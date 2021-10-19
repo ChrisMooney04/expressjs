@@ -4,16 +4,31 @@
     <meta charset="utf-8">
     <title>Comments</title>
   </head>
+  <style>
+    .name {
+
+    },
+    .comment {
+
+    }
+  </style>
   <body>
     <center>
       <h1>Feedback Page</h1>
-      <div id='jeff'>
-        <%-comments-%>
-      </div>
+      <center>
+      <% comments.forEach(comment => { %>
+        <div id='name'>
+          <%-comment.name %>
+        </div>
+        <div id='comment'>
+          <%-comment.adjective %>
+        </div>
+
+  <% }) %>
+  </center>
     </center>
   </body>
   <script type="text/javascript">
-    var comments = JSON.stringify(commentData)
-    console.log(comments)
+    JSON.readFileSync('comments.json')
   </script>
 </html>

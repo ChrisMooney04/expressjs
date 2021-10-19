@@ -38,7 +38,9 @@ app.get("/will", (req, res) => {
   res.render('profile', profileData.will);
 });
 app.get("/feedback", (req, res) => {
-  res.sendFile(path.join(__dirname + '/feedback.html'))
+  rawdata = fs.readFileSync('comments.json');
+  commentData = JSON.parse(rawdata);
+  res.render('feedback',commentData)
 });
 app.post('/feedback', (req, res) => {
   let feedback = {
