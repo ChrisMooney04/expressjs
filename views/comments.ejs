@@ -6,45 +6,72 @@
   <title>Comments</title>
 </head>
 <style>
-  #name {
-    border: 1px solid #000000;
-    color: black;
-    position: absolute;
-    width: 300px;
-    margin: auto;
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
   }
-  #comment {
+
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+  }
+
+  .box {
+    position: relative;
+    width: 320px;
+    border: 1px solid #000000;
+    margin: 10px;
+    float: left;
+    background-color: #474e5d;
+  }
+
+  .name {
     border: 1px solid #000000;
     color: black;
-    position: absolute;
-    top: 100px;
     width: 300px;
-    margin: auto;
+    margin: 10px;
+    background-color: #FFFFFF;
+  }
+
+  .comments {
+    border: 1px solid #000000;
+    color: black;
+    width: 300px;
+    margin: 10px;
     height: 100px;
+    background-color: #FFFFFF;
   }
-  #else{
-    position: relative
+
+  #bigbox {
+    width: 90%;
+    height: 500px;
+    text-align: center;
   }
 </style>
 
 <body>
   <center>
-    <h1>Feedback Page</h1>
+    <div class='about-section'>
+      <h1>Feedback Page</h1>
+    </div>
   </center>
-  <% comments.forEach(comment => { %>
-  <div id='else'>
-    <div id='name'>
-      Name: <%-comment.name %>
-    </div>
-    <div id='comment'>
-      Comment: <%-comment.adjective %>
-    </div>
-  </div>
+  <center>
+    <div id="bigbox">
+      <% comments.forEach(comment => { %>
+      <div class="box">
+        <div class="name">
+          Name: <%-comment.name %>
+        </div>
+        <div class="comments">
+          Comment: <%-comment.adjective %>
+        </div>
+      </div>
 
-  <% }) %>
+      <% }) %>
+    </div>
+  </center>
 </body>
-<script type="text/javascript">
-  JSON.readFileSync('comments.json')
-</script>
 
 </html>
