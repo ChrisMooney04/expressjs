@@ -1,34 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Comments</title>
-  </head>
-  <style>
-    .name {
 
-    },
-    .comment {
+<head>
+  <meta charset="utf-8">
+  <title>Comments</title>
+</head>
+<style>
+  #name {
+    border: 1px solid #000000;
+    color: black;
+    position: absolute;
+    width: 300px;
+    margin: auto;
+  }
+  #comment {
+    border: 1px solid #000000;
+    color: black;
+    position: absolute;
+    top: 100px;
+    width: 300px;
+    margin: auto;
+    height: 100px;
+  }
+  #else{
+    position: relative
+  }
+</style>
 
-    }
-  </style>
-  <body>
-    <center>
-      <h1>Feedback Page</h1>
-      <center>
-      <% comments.forEach(comment => { %>
-        <div id='name'>
-          <%-comment.name %>
-        </div>
-        <div id='comment'>
-          <%-comment.adjective %>
-        </div>
+<body>
+  <center>
+    <h1>Feedback Page</h1>
+  </center>
+  <% comments.forEach(comment => { %>
+  <div id='else'>
+    <div id='name'>
+      Name: <%-comment.name %>
+    </div>
+    <div id='comment'>
+      Comment: <%-comment.adjective %>
+    </div>
+  </div>
 
   <% }) %>
-  </center>
-    </center>
-  </body>
-  <script type="text/javascript">
-    JSON.readFileSync('comments.json')
-  </script>
+</body>
+<script type="text/javascript">
+  JSON.readFileSync('comments.json')
+</script>
+
 </html>
