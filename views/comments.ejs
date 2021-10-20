@@ -16,7 +16,7 @@
     text-align: center;
     background-color: #474e5d;
     color: white;
-    height: 100px;
+    height: 150px;
   }
 
   .box {
@@ -58,6 +58,7 @@
     position: absolute;
     width: 500px;
   }
+
   #feedback {
     position: relative;
     text-align: center;
@@ -65,10 +66,44 @@
     width: 30%;
     margin: auto;
   }
+
   #submit {
     margin: 10px;
     float: right;
     position: absolute;
+    cursor: pointer;
+  }
+
+  #button1 {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 5px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 15%;
+    position: absolute;
+    border: 1px solid #000000;
+    top: 90px;
+    right: 125px;
+  }
+
+  #button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 5px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 15%;
+    position: absolute;
+    border: 1px solid #000000;
+    top: 110px;
+    right: 125px;
   }
 </style>
 
@@ -93,6 +128,7 @@
           <input id='submit' type="submit" value="Submit" action="comments">
         </form>
       </div>
+      <p><a href="/"><button typle="button1" id="button1">To Main Page</button></a></p>
     </div>
   </center>
   <center>
