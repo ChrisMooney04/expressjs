@@ -16,6 +16,7 @@
     text-align: center;
     background-color: #474e5d;
     color: white;
+    height: 100px;
   }
 
   .box {
@@ -48,14 +49,50 @@
     width: 90%;
     height: 500px;
     text-align: center;
+    border: 1px solid #FFFFFF;
+  }
+
+  #tag {
+    top: 10px;
+    float: left;
+    position: absolute;
+    width: 500px;
+  }
+  #feedback {
+    position: relative;
+    text-align: center;
+    border: 3px solid #FFFFFF;
+    width: 30%;
+    margin: auto;
+  }
+  #submit {
+    margin: 10px;
+    float: right;
+    position: absolute;
   }
 </style>
 
 <body>
   <center>
     <div class='about-section'>
-      <h1>Feedback Page</h1>
-      <p>Team F</p>
+      <div id='feedback'>
+        <h1>Feedback Page</h1>
+        <p>Team F</p>
+        <meta http-equiv="refresh" content="10">
+      </div>
+      <div id='tag'>
+        <form action="/comments" method="post">
+          <p1>Name</p1>
+          <br>
+          <input type="text" name="name" placeholder="Enter Name Here" value="">
+          <br>
+          <br>
+          <p1>Comments</p1>
+          <br>
+          <input type="text" name="comments" placeholder="Enter Comments Here" value="" style="height:100px;width:300px">
+          <input id='submit' type="submit" value="Submit" action="comments">
+        </form>
+      </div>
     </div>
   </center>
   <center>

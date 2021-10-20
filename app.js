@@ -37,12 +37,7 @@ app.get("/tyler", (req, res) => {
 app.get("/will", (req, res) => {
   res.render('profile', profileData.will);
 });
-app.get("/feedback", (req, res) => {
-  rawdata = fs.readFileSync('comments.json');
-  commentData = JSON.parse(rawdata);
-  res.render('feedback',commentData)
-});
-app.post('/feedback', (req, res) => {
+app.post('/comments', (req, res) => {
   let feedback = {
     name: req.body.name,
     adjective: req.body.comments
@@ -55,6 +50,8 @@ app.post('/feedback', (req, res) => {
       if (err) {
         console.log(err)
       } else {
+        console.log(`Added Comment`)
+        res.render('comments', commentData)
       }
     })
   }
@@ -63,7 +60,7 @@ app.post('/feedback', (req, res) => {
 app.get("/comments", (req, res) => {
   data = fs.readFileSync('comments.JSON')
   commentData = JSON.parse(data)
-  res.render(path.join(__dirname, 'views/comments.ejs'), commentData);
+  res.render('comments', commentData);
 })
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
