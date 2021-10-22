@@ -1,5 +1,5 @@
 const express = require('express');
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 9876;
 const app = express();
 const path = require('path');
 const ejs = require('ejs')
@@ -9,7 +9,7 @@ app.use(express.urlencoded());
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
-var rawdata = fs.readFileSync('profiles.JSON');
+var rawdata = fs.readFileSync('profiles.json');
 var profileData = JSON.parse(rawdata);
 /*console.log(rawdata);
 console.log(profileData);*/
@@ -27,6 +27,9 @@ app.get("/", (req, res) => {
 });
 app.get("/chris", (req, res) => {
   res.render('profile', profileData.chris);
+});
+app.get("/2048", (req, res) => {
+  res.render('2048');
 });
 app.get("/jayson", (req, res) => {
   res.render('profile', profileData.jayson);
@@ -59,7 +62,7 @@ app.post('/comments', (req, res) => {
 })
 
 app.get("/comments", (req, res) => {
-  data = fs.readFileSync('comments.JSON')
+  data = fs.readFileSync('comments.json')
   commentData = JSON.parse(data)
   res.render('comments', commentData);
 })
