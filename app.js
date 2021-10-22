@@ -60,6 +60,13 @@ app.post('/comments', (req, res) => {
     })
   }
 })
+app.post('/clearcomments', (req, res) => {
+  let clearedObj = JSON.stringify({
+    comments: []
+  });
+  fs.writeFile('comments.json', clearedObj, 'utf8', () => console.log("Cleared comments"));
+  res.redirect('/comments');
+});
 
 app.get("/comments", (req, res) => {
   data = fs.readFileSync('comments.json')

@@ -104,6 +104,16 @@
     top: 110px;
     right: 125px;
   }
+
+  #bottom-bar {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    background-color: #474e5d;
+    color: #FFF
+  }
 </style>
 
 <body>
@@ -129,6 +139,9 @@
         </form>
       </div>
       <p><a href="/"><button typle="button1" id="button1">To Main Page</button></a></p>
+      <form method="post" action="/clearcomments">
+        <input id="button" type="submit" value="Clear Comments">
+      </form>
     </div>
   </center>
   <center>
@@ -147,5 +160,10 @@
     </div>
   </center>
 </body>
+<footer>
+  <div class="w3-container w3-theme-l1" id="bottom-bar">
+    <p>Powered by Life of Team F</p>
+  </div>
+</footer>
 
 </html>
