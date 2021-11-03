@@ -18,5 +18,9 @@
     "name":"Tyler",
     "title": "hello",
     "mainbody":  "<p id=\"tyler1\">some info about me: Before i went to York Tech i went to Northeastern School ditrict. My favorite color is a blue/green color similar to teal and mint, but my second favorite is dark purple (midnight purple) In my free time i like to work on cars and other fun projects</p>"
+  },
+  "ethan":{
+    "name": "Ethan",
+    "mainbody": "I am a hard working student with a 4.0 GPA. I play basketball and baseball here at York County School of Technology. I am able to adapt to many different work environments. I would prefer to work as a game developer but look to go to college first. I want to be able to build my own game and create a company from it."
   }
 }

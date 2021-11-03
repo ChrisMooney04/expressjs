@@ -34,8 +34,8 @@ app.get("/2048", (req, res) => {
 app.get("/jayson", (req, res) => {
   res.render('profile', profileData.jayson);
 });
-app.get("/tyler", (req, res) => {
-  res.render('profile', profileData.tyler);
+app.get("/ethan", (req, res) => {
+  res.render('profile', profileData.ethan);
 });
 app.get("/will", (req, res) => {
   res.render('profile', profileData.will);
